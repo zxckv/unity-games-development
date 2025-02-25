@@ -1,0 +1,36 @@
+Player:
+- Change to first person
+- Add interaction systems
+
+Weapon:
+- Add 1 weapon model
+- Add weapon functionality
+- Add multiple weapons
+
+Enemy:
+- Add zombie model
+- Add health system
+- Add player tracking
+
+World:
+- Create map
+- Add interaction points
+- Add enemy spawn points
+
+Menu and UI:
+- Create start menu
+- Create pause menu
+- Create player UI
+
+Game:
+- Create wave system
+- Create score and point systems
+- Create game loop
+- Create objectives and progression
+
+User:
+- Create save system for scores, level, progress
+
+Upgrades:
+- Create in game abilities
+- Create weapon upgrade system
