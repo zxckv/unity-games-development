@@ -1,0 +1,78 @@
+
+ - - - - - Introduction - - - - -
+
+	At this stage in development, the project has undergone multiple sprints and has accumulated
+enough progress to something something this report.
+
+
+ - - - - - Overview - - - - -
+
+	First-person wave surival game. Using zombies as the enemy of choice for simple contextual 
+reasons (they can be found in large numbers in most interpretations, are not the strongest and 
+are usually easy to explain why they exist).
+	
+	The gameplay loop will have the player spawn in with minimal gear, a level good enough to
+survive, that can be used to build their arsenal and progress through higher and harder rounds.
+The maps will be unlocked within these runs, requiring the player to effectively manage economy.
+Furthermore, there will be other objectives that focus on a more straightforward questline at the
+same time as the basic round progression. The questline is not required but allows for different
+playstyles to be equally valid when playing. The questline will also likely link to the overarching
+story of the game, providing context and answering questions. In addition, there will be some side
+objectives (possibly secrets / easter eggs) that the player may find to also provide other 
+benefits, likely to be cosmetic in some manner. All together, this should provide a varied
+experience for any player. 
+
+	The game takes inspiration from Left 4 Dead, Sker Ritual and the many entries in the Call of
+Duty franchise that feature their Zombies game mode - the latter being the closest to what the
+final product aims to be. 
+
+	The target audience of the game will be akin to those of the games it takes inspiration from,
+however with the intention of being more appealling to a greater scope of them through providing
+the previously mentioned varied gameplay 'routes'. 
+
+
+ - - - - - Design - - - - -
+ 
+	The game will feature 3D models that are low-poly stylised. This is because they can easily be
+found for free on online market places or even made from scratch. This has the added benefit of 
+being better for the performance and final size of the game. Good effects and lighting will help to
+accentuate the simple models and will provide an, while ultimately common, appealling visual style.
+
+	The UI elements will be very angular and modern in appearance. They must be concise, clear and 
+effective in order for the players to be able to use them well. Only necessary information will be
+presented at the relevant times. In-game UI elements must refrain from being distracting to the
+general gameplay experience.
+
+	In the current state of the game, the story has not been fully developed as it is secondary to
+the actual gameplay mechanics and systems. The story will predominantly be told through the
+enviroments the player will explore, instead of being given through exposition dumps that may
+overwhelm or confuse the player. 
+
+	The game will feature multiple levels that will be thematically different, while still
+maintaining the games core concepts and systems. These levels will not be overly complex, a reason
+for why there will be more than 1 to begin. Multiple levels will allow for versatile replayability,
+as well as attracting different people based on different maps. 
+
+	The games controls are currently fairly standard for any first-person shooter that is played
+with a keyboard and mouse. At the current stage of development, there is no other support for
+controls, however it is something that will be implemented in the future. Support for controllers
+is essential, as it not only allows for some people to play in they prefered way but more 
+importantly is a good inclusion for accessibility. An even greater development of this would be to
+include a customisation system for the games controls. This will give players the freedom to
+configure the controls as they wish. 
+
+	Unity was the engine chosen for this game. This is because preliminary research indicated that
+more support and help was already established for this engine, something that was further supported
+by the information provided by the lecture and lab materials. While support for Unreal is not
+missing, it seemed like more support would be available for Unity. Furthermore, Unity has been the
+engine of choice for many games in the same or adjactent genres and those of similar scales. The
+only other potential engine for this game was Godot, as it is an engine I am familiar with and know
+the most out of all the options. It was ultimately not chosen, yet again due to the available in 
+person support being less than the support available for Unity. 
+
+
+ - - - - - Implementation - - - - - 
+ 
+	Essential systems to that establish the game as being a first-person shooter were implemented
+as soon as possible. This includes basic camera and movement controls. After this had been done,
+systems relating to health and enemies began alongside simple UI development. 

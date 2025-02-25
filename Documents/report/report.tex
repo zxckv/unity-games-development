@@ -1,16 +1,62 @@
-\documentclass[progress]{cmpreport}
+\documentclass[11pt]{article}
 \usepackage{rotating}
+\usepackage{geometry}
 
-\title{Games Development}
+\makeatletter
+
+    \def\ps@titlestyle{
+        \let\@oddhead{(0pt,0pt){}{}{}(\textwidth,1pt)}
+        \let\@evenhead{(0pt,0pt){}{}{}(\textwidth,1pt)}
+        \def\@oddfoot{(\textwidth,1pt){}{}{\coursecode\hfill\pagemark}(0pt,0pt)}
+        \def\@evenfoot{(\textwidth,1pt){}{}{\coursecode\hfill\pagemark}(0pt,0pt)}
+    }
+
+    \renewcommand\maketitle{
+        \clearpage
+        \newgeometry{left=2.5cm,right=2.5cm,top=7cm,bottom=3cm}
+        \begin{center}
+            \vspace*{\baselineskip}
+            \huge{\textbf{\@title}} \\ [2ex]
+            \Large{\@author \space (\@registration)} \\
+            \Large{\@coursecode} \\
+            \vspace*{\fill}
+        \end{center}
+        \restoregeometry
+        \clearpage
+    }
+
+    \newcommand*{\coursecode}[1]{\renewcommand*{\@coursecode}{#1}}
+    \newcommand*{\@coursecode}{\ClassError{error}{No \string\coursecode\space given}{}}
+
+    \newcommand*{\registration}[1]{\renewcommand*{\@registration}{#1}}
+    \newcommand*{\@registration}{\ClassError{error}{No \strin\gregistration\space given}{}}
+
+    \newgeometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
+
+\makeatother
+
+
+\title{Unity Games Development: Design and Plan}
 \author{Zack Langley}
+\coursecode{CMP-6056B}
 \registration{100394283}
-\ccode{CMP-6056B}
 
-\onePageLists
 
 \begin{document}
 
+\thispagestyle{empty}
+\maketitle
+
+\thispagestyle{empty}
+\tableofcontents
+
+
+\clearpage
+
+\setcounter{page}{1}
+
 \section{Introduction}
+
 
 \section{Overview}
 
