@@ -56,30 +56,54 @@
 \setcounter{page}{1}
 
 \section{Introduction}
-
+After undergoing multiple sprints, this game has accumulated enough resources relating to the design, plan and implementation of its systems for this document to be constructed. This document intends to provide an overview of the many aspects of the game in its current state, alongside justifications and explanations for choices made that influenced the development as a whole. The current version of the game will be featured in a showcase that highlights each implemented core feature. Plans for future development will be laid out in order to provide a scale of reference for the progress of this project when that becomes relevant later in time. \\
 
 \section{Overview}
+The game revolves around a wave survival system that allows for incrementing difficulty and straightforward progression. It utilises a first-person camera and a control layout influenced by other popular first-person shooter games. The game will employ minor horror elements to contextually link some other design choices, such as having zombies be the predominant enemy type throughout. These horror elements will be minimal and will refrain from taking the attention away from the first-person shooter and wave survivor mechanisms that the game is built around. \\
+
+Each attempt at a level will contain the same core gameplay loop. The player will begin at the start of their selected map with an unimpressive arsenal and no upgrades. They will be able to use that starting arsenal to progress and earn currency from defeating enemies. This earned currency can then be used to purchase weapons, upgrades or unlock further areas of the current map. As the waves are completed, enemies will become more difficult to defeat and as such will require the player to purchase new weapons and upgrades, most of which are found in other areas of the map. This will require the player to strategically prioritise the available currency that they possess in order to survive for a greater number of rounds. 
+Beyond the standard wave progression system, the maps will also contain a simple questline. The questline will require the player to complete a selection of steps and requirements in order to complete it. This allows players the opportunity to have a more linear experience with the game if that is what they would prefer, however this will be done within the gameplay of the standard wave system. The questline will be completely optional for those that would prefer the more arcade-like playstyle the standard wave system provides.  
+Another similar aspect to maps will be the inclusion of ‘secrets’ that the player will be able to find. These will likely only grant the player benefits to their current attempt and will ultimately have no impact on the game outside of that attempt, however it is beneficial for the players to have ample levels of side content in order to provide them with fresh experiences even after some time has passed.
+The combination of all progression methods within the game and its individual maps will allow players to have a varied experiences for a long period of time. The standard wave system is constructed in a way that allows for large amounts of re-playability on its own, so when used with the other methods of progression found within the game it should allow an experience free of tedium and boredom for many different types of players. \\
+
+The game takes inspiration from many games within the same genre and other adjacent genres, with notable ones including Left 4 Dead and Sker Ritual. The most prominent inspiration for the game is Call of Duty: Zombies, a separate game mode found within select entries of the Call of Duty franchise. \\
+
+With the games heavy focus on being viable for several different types of players, the target audience is quite substantial. Most of the target audience falls into the same categories as the target audience for the games previously mentioned in the inspirations. Those that enjoy first-person shooter games will likely be most attracted to this game, as it is a fundamental aspect of the games mechanics and will also be well refined and developed.  \\
 
 \section{Design}
+The game will utilise an increasing popular visual style in the modern game development landscape, in which low poly models are used in conjunction with impressive lighting and digital effects. 
+The use of low poly 3D assets provides many benefits to development. As they are becoming increasingly popular, they are easy to locate and acquire from online marketplaces. If something is not found on an online marketplace, it could potentially instead be constructed from scratch. Furthermore, low poly assets grant better performance to the game and reduce the final file size.
+The lighting and effects previously mentioned will be used to highlight and accentuate the models and the constructed environments. When they are all combined together well, they create something very visually appealing. \\
+
+\subsection{Engine}
+Unity was the engine chosen to develop this game, with the choice being made very early on. The biggest reason for using Unity over any of the other options was ultimately the foundation of support that it had and the accessibility of that support. Within lecture and lab content, there is a greater level of knowledge and support for Unity development. Furthermore, there is a surplus of tutorials, documents and other resources that can be found very quickly online. These reasons made Unity appear to be the sensible and secure option for the development of this game. Beyond this, the scale of the game aligned closely with the scale of other popular games also developed in Unity. It appeared to be the best option for the balance of scale and performance. 
+Unreal Engine was also a contender for the game engine to be used. Unreal contains many of the same feature, accessories and systems that are found within Unity. Furthermore, Unreal has shown to be very impressive in creating large scale, AAA [Triple-A, relating to high budget games developed by large teams] games. On the other hand, personal usage and experience with the new version of Unreal Engine have allowed me to conclude that it would not be the most suitable option for the game. Unreal Engine 5 is a much larger engine than any of the others considered for this game. It is known to create final products with a much larger file size, something that was substantially different from the direction this game needed to be taken in. Lastly, support for Unreal is still plentiful, however the support within the in-person sessions would be less than that of Unity. It is because of these factors that Unreal Engine was not considered further as a potential candidate for this game’s engine.
+The last potential option considered for the game was the Godot Engine. Godot is a free and open-source game engine, making it very appealing for many – especially those developing independently. Furthermore, it is incredibly lightweight while still containing an impressive set of features for development. Although there are a large number of positives, Godot support in person was going to be non-existent and as such, development using it could potentially become very difficult with no support to help realign the project. 
+Upon review of all the possible engines and weighing their positives and negatives, Unity was the engine that best aligned with the game as a whole. It will be able to continue to support the expansion of the game through development and can do so effectively and efficiently. The large collection of support for Unity means that development will be able to effectively move past any issues and continue with minimal overall disruption. \\
 
 \subsection{Story}
-
-\subsection{Characters}
-
-\subsection{Levels}
-
-\subsection{UI}
+As it currently stands, the story and background of the game has not yet been fully developed as it is less important that the implementation of the many foundational systems. Nonetheless, it has been given some degree of thought. 
+Environmental storytelling is an impressive way to provide essential story information to the player and improve the maps within the games, making them feel more relevant and tied together. This would be the ideal method of imparting story information onto the player. 
+Using other methods, such as pages of text for the player to read, detract from the gameplay and take the player out of their immersive state. While sometimes necessary to give information in a similar manner, it will be minimised in this game and will be done in the best possible way in order to not detract from the gameplay or potentially confuse the player. \\
 
 \subsection{Controls}
+In the modern gaming landscape, there are an abundance of well-designed first-person shooter games. This has resulted in a great standard being found for the control schemes used within these games, which can then be taken and implemented into this game. The benefit of this is that players will be able to quickly pick up the control scheme and play confidently, as they would in many other first-person shooter games. 
+Currently in development, this control scheme is the extent of what has been implemented, however further plans are in place to expand on the control system. Support for controllers is very important, as it is common for a players preferred way to play a first-person shooter to be with a controller. Furthermore, allowing for controller support will hopefully allow for a greater degree of accessibility within the game, as controllers are sometimes not just a preference but instead a necessity in order for some players to experience the game to any degree. 
+The final planned aspect relating to the control system is a fully customisable set of controls that would allow the player to remap their actions to whatever buttons they desire. This will provide the player with an even greater level of accessibility support and should allow for anyone to play the game in the way they prefer or require. \\
+
+\subsection{Levels}
+To provide the player with a greater level of opportunities when playing the game, there will be multiple maps available to play. All will be thematically different and mostly disconnected to one another in order to provide unique experiences within each. Nonetheless, they will all serve the same general purpose and feature the same core gameplay loops. Furthermore, the inclusion of thematically distinct maps will help to widen the scope of people that may be interested in the game. In order to achieve the goal of having many maps within the game, they will be of slightly smaller scale. This will be done to a level that is not a detriment to the overall experience of the map itself or the game as a whole but that will also allow for a more streamlined development experience of the maps.  \\
+
+\subsection{User Interface}
+The design of any menu or UI element within the game will follow a set design pattern, being modern, angular and flat. This is not only to be clear and straightforward but to also be thematically consistent with the other graphical elements of the game.
+The menus within the game will be constructed to be clear and effective. Relevant information and sub-menus will be grouped together correctly and not unnecessarily, in order to prevent there being difficulties locating certain areas. Menu control systems will be inspired by other modern games, allowing for appropriate and fluid movement between menu locations. 
+UI that appears during gameplay will also need to be clear and concise in order to not detract from the rest of the game. This will entail a well-designed and minimalistic HUD for the player and not much else. The HUD will provide the player with the essential gameplay information that would be impractical to show anywhere else. \\
 
 \section{Implementation}
-
-\subsection{Element 1}
-
-\subsection{Element 2}
+As it currently stands, only a select number of fundamental systems have been implemented into the game. These have so far established the game correctly as a first-person shooter, with other aspects yet to be implemented to full encompass the entire foundation of the game. \\
 
 \section{Conclusion}
-
+The development of the game is in a very appropriate place for the time that has so far been spent. With the correct pacing being continued from this point, all required features will be implemented within reasonable time frames, allowing for additional time to be spent ensuring that all systems are working together as intended and giving the final product other essential testing and cleaning. \\
 
 \clearpage
 
