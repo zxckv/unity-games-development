@@ -102,10 +102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdc664ae4648554b8557873c321bb2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 1099908658542747296}
   cam: {fileID: 0}
-  target: {fileID: 0}
-  offset: 0
+  target: {fileID: 7433858770179679989}
+  offset: 0.5
 --- !u!1 &701802077836987589
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
   healthMax: 10
   healthCurrent: 10
   speed: 3
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 3360193691152620920}
 --- !u!1 &6039056201755279916
 GameObject:
   m_ObjectHideFlags: 0
