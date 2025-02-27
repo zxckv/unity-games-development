@@ -22,5 +22,11 @@ public class FirstPersonCamera : MonoBehaviour {
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+
+        // if (Physics.Raycast(new Ray(transform.position, transform.forward), out RaycastHit lookAtInfo, 10f)) {
+        //     if (lookAtInfo.transform.root.TryGetComponent(out Enemy enemy)) {
+        //         enemy.SendMessage("ToggleHealthbar");
+        //     }
+        // }
     }
 }

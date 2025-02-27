@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class FirstPersonInput : MonoBehaviour {
 
-    public LayerMask enemyMask;
-
     void Update() {
-        if (Input.GetButtonDown("Interact")) {
-                        
-        };
+
     }
 }

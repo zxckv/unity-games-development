@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ public class EnemyHealthBar : MonoBehaviour {
     [SerializeField] private float offset;
 
     public void UpdateHealthBar(float healthMax, float healthCurrent) {
-        slider.value = healthCurrent / healthMax;
+        slider.value = healthMax / healthCurrent;
     }
 
     void Update() {
