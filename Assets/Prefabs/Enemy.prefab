@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 3170868546136424144}
   - component: {fileID: 9192923244468386455}
   - component: {fileID: 2997555525922594068}
+  - component: {fileID: 3656338025714431886}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -340,7 +341,6 @@ MonoBehaviour:
   healthCurrent: 10
   criticalObject: {fileID: 0}
   criticalMultiplier: 0
-  speed: 3
   healthBar: {fileID: 3360193691152620920}
   agent: {fileID: 0}
   target: {fileID: 0}
@@ -366,6 +366,25 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3656338025714431886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6024024802158883540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &6039056201755279916
 GameObject:
   m_ObjectHideFlags: 0
