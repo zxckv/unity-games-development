@@ -7,5 +7,9 @@
 \contentsline {subsection}{\numberline {3.4}Levels}{3}{}%
 \contentsline {subsection}{\numberline {3.5}User Interface}{4}{}%
 \contentsline {section}{\numberline {4}Implementation}{4}{}%
-\contentsline {section}{\numberline {5}Conclusion}{4}{}%
-\contentsline {section}{\numberline {A}Image Gallery}{5}{}%
+\contentsline {subsection}{\numberline {4.1}Player}{4}{}%
+\contentsline {subsection}{\numberline {4.2}Enemy}{5}{}%
+\contentsline {subsection}{\numberline {4.3}Combat}{5}{}%
+\contentsline {subsection}{\numberline {4.4}Levels}{5}{}%
+\contentsline {section}{\numberline {5}Conclusion}{5}{}%
+\contentsline {section}{\numberline {A}Image Gallery}{6}{}%
