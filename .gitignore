@@ -80,4 +80,4 @@ crashlytics-build.properties
 *.synctex.gz
 
 # VSCode
-.vscode/
+/.vscode/
