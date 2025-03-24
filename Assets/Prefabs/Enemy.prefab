@@ -337,12 +337,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ff58b78eb43d348be83409302c54dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 10
-  healthCurrent: 10
-  criticalObject: {fileID: 0}
-  criticalMultiplier: 0
+  healthMax: 100
+  healthCurrent: 100
+  criticalObject: {fileID: 7934568034357811796}
+  criticalMultiplier: 3
   healthBar: {fileID: 3360193691152620920}
-  agent: {fileID: 0}
+  agent: {fileID: 2997555525922594068}
   target: {fileID: 0}
 --- !u!195 &2997555525922594068
 NavMeshAgent:
