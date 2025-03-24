@@ -10,12 +10,18 @@ public class Weapon : MonoBehaviour {
     public bool weaponIsAuto;
     public float weaponDamage;
     public float weaponRange;
+    public float weaponMag;
+    public float weaponReserve;
 
+    private float weaponMagAmmo;
+    private float weaponReserveAmmo;
     private float weaponCooldown;
     private Transform playerCamera;
 
     void Start() {
         weaponCooldown = 1 / weaponFireRate;
+        weaponMagAmmo = weaponMag;
+        weaponReserveAmmo = weaponReserve;
         playerCamera = Camera.main.transform;
     }
 
