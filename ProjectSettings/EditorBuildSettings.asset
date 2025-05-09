@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FIrstPersonScene.unity
     guid: 1383f97868c76fef9974cdcd343f45c1
+  - enabled: 1
+    path: Assets/Scenes/Farm.unity
+    guid: 942d0206bd73fbc479bd9dd6011e5033
   m_configObjects: {}

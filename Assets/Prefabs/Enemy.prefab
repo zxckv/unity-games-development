@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 9192923244468386455}
   - component: {fileID: 2997555525922594068}
   - component: {fileID: 3656338025714431886}
+  - component: {fileID: 4838153505907136915}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -309,8 +310,24 @@ MonoBehaviour:
   criticalObject: {fileID: 7934568034357811796}
   criticalMultiplier: 3
   healthBar: {fileID: 3360193691152620920}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1736828228995297402, guid: b4058802f5b143a45b158564858ff010, type: 3}
+        m_TargetAssemblyTypeName: FirstPersonMain, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   agent: {fileID: 2997555525922594068}
   target: {fileID: 0}
+  anim: {fileID: 6098086502450890562}
 --- !u!195 &2997555525922594068
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -352,6 +369,27 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 0
   m_AffectedAgents: ffffffff
+--- !u!95 &4838153505907136915
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6024024802158883540}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6530771420671070492
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +416,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6530771420671070492}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -709,7 +747,7 @@ Animator:
   m_GameObject: {fileID: 7192774118732329612}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 624c76d2876527e92b753493354baebd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2d2d93d6cc6c6564fa745b9151192ea3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

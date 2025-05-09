@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9026816300020334896}
   - component: {fileID: 4459518157253966145}
+  - component: {fileID: -7012247565982042239}
   m_Layer: 0
   m_Name: Rifle
   m_TagString: Untagged
@@ -45,12 +46,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63fb0236e23e2a948bc910d19d1d0868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obj: {fileID: 4653237450070928573}
+  onWeaponFire:
+    m_PersistentCalls:
+      m_Calls: []
   weaponFireRate: 10
   weaponIsAuto: 1
   weaponDamage: 20
   weaponRange: 40
   weaponMag: 30
   weaponReserve: 270
+  weaponReloadTime: 4
+  weaponLevel: 1
+  ammoMagTextBox: {fileID: 0}
+  ammoResTextBox: {fileID: 0}
+  weaponTierTextBox: {fileID: 0}
+--- !u!111 &-7012247565982042239
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8551642310537968912}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &5499729809485894124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120,6 +145,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c2928b363aec7bb48a1e287262bab5e, type: 3}
+--- !u!1 &4653237450070928573 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c2928b363aec7bb48a1e287262bab5e, type: 3}
+  m_PrefabInstance: {fileID: 5499729809485894124}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5465204330790778375 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c2928b363aec7bb48a1e287262bab5e, type: 3}

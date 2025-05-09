@@ -6,11 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour {
 
-    [Header ("Levels to load")]
-    public string nextScene;
-
-    public void PlayGame() {
-        SceneManager.LoadScene(nextScene);
+    public void PlayGame(string scene) {
+        SceneManager.LoadScene(scene);
     }
 
     public void ExitButton() {
