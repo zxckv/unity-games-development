@@ -18,6 +18,8 @@ public class FirstPersonInteraction : MonoBehaviour {
     [SerializeField] public Transform source;
     [SerializeField] public float range = 1.5f;
 
+    [SerializeField] public Transform hand;
+
     void Start() {
         FirstPersonInteraction interactor = new FirstPersonInteraction();
         interactor = this;
@@ -52,5 +54,11 @@ public class FirstPersonInteraction : MonoBehaviour {
 
     public void addPoints(int add) {
         main.points += add;
+    }
+
+    public void setWeapon(GameObject obj) {
+        // Destroy(hand.GetChild(0).gameObject);
+        // obj.transform.SetParent(hand.transform);
+        // hand.GetChild(0).gameObject = obj;
     }
 }

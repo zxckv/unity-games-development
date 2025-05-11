@@ -1112,6 +1112,7 @@ MonoBehaviour:
   messageBox: {fileID: 2723549136461563812}
   source: {fileID: 1868777546738060351}
   range: 2
+  hand: {fileID: 1868777546738060351}
 --- !u!1 &3783290213255539919
 GameObject:
   m_ObjectHideFlags: 0

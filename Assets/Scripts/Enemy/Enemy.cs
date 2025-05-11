@@ -19,9 +19,11 @@ public class Enemy : MonoBehaviour {
 
     [SerializeField] Animator anim;
 
+    private GameObject fpmain = FirstPersonMain.instance;
+
     void Awake() {
         healthBar = GetComponentInChildren<EnemyHealthBar>();
-        target = FirstPersonMain.instance.transform;
+        target = fpmain.transform;
     }
 
     void Start() {
@@ -44,10 +46,13 @@ public class Enemy : MonoBehaviour {
             healthCurrent -= damage;
         }
 
+        fpmain.GetComponent<FirstPersonMain>().AddPoints(10);
+
         healthBar.gameObject.SetActive(true);
         healthBar.UpdateHealthBar(healthCurrent, healthMax);
 
         if (healthCurrent <= 0) {
+            fpmain.GetComponent<FirstPersonMain>().AddPoints(100);
             DestroyEnemy();
         }
     }

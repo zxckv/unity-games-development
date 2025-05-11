@@ -313,10 +313,10 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1736828228995297402, guid: b4058802f5b143a45b158564858ff010, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FirstPersonMain, Assembly-CSharp
-        m_MethodName: AddPoints
-        m_Mode: 3
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -324,10 +324,11 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 0
   agent: {fileID: 2997555525922594068}
   target: {fileID: 0}
   anim: {fileID: 6098086502450890562}
+  player: {fileID: 1736828228995297402, guid: b4058802f5b143a45b158564858ff010, type: 3}
 --- !u!195 &2997555525922594068
 NavMeshAgent:
   m_ObjectHideFlags: 0

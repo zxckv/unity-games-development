@@ -26,6 +26,8 @@ public class FirstPersonMain : MonoBehaviour {
     [SerializeField] public int healthMax = 100;
     [SerializeField] public int healthCurrent;
 
+    public PauseController pc;
+
     void Start() {
         healthCurrent = healthMax;
         healthBar.setMaxHealth(healthMax);
@@ -38,6 +40,9 @@ public class FirstPersonMain : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown(KeyCode.Q)) {
             TakeDamage(10);
+        } else if (Input.GetKeyDown(KeyCode.P)) {
+            pc.Pause();
+            
         }
 
         pointsTextBox.SetText("\\ " + points.ToString());
