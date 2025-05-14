@@ -7,8 +7,7 @@ public class Spawner : MonoBehaviour {
     [SerializeField] private Transform[] spawners;
     [SerializeField] private GameObject enemy;
 
-    [SerializeField] private int round = 1; 
-    [SerializeField] private int enemyMaxCount = 20; 
+    [SerializeField] private int round = 0; 
     [SerializeField] private int enemyCurrentCount = 0; 
     [SerializeField] private float enemyDelay = 1f; 
 
@@ -17,13 +16,21 @@ public class Spawner : MonoBehaviour {
 
     private int enemiesThisRound;
 
+    public static Spawner Instance;
+
+    void Awake() {
+        Instance = this;
+    }
+
     void Start() {
         roundTransitionCountdown = roundTransitionTime;
     }
 
     void Update() {
         if (roundTransitionCountdown <= 0) {
-            if (enemyCurrentCount != CalcualteEnemies()) {
+            if (enemyCurrentCount == 0) {
+                round += 1;
+                FirstPersonMain.instance.GetComponent<FirstPersonMain>().currentRound = round;
                 StartCoroutine(SpawnRound());
             }
             roundTransitionCountdown = roundTransitionTime;
@@ -34,17 +41,19 @@ public class Spawner : MonoBehaviour {
 
     private IEnumerator SpawnRound() {
         for (int i = 0; i < CalcualteEnemies(); i++) {
-            if (enemyCurrentCount < enemyMaxCount) {
-                Spawn();
-                yield return new WaitForSeconds(enemyDelay);
-            }
+            Spawn();
+            yield return new WaitForSeconds(enemyDelay);
         }
 
         yield break;
     }
 
     private int CalcualteEnemies() {
-        return enemiesThisRound = 6 + ((round - 1) * 3);
+        if (round == 0) { 
+            return 0; 
+        } else {
+            return enemiesThisRound = 6 + ((round - 1) * 3);
+        }
     }
 
     private void Spawn() {
@@ -52,14 +61,8 @@ public class Spawner : MonoBehaviour {
         Instantiate(enemy, spawners[randInt].position, spawners[randInt].rotation);
         enemyCurrentCount += 1;
     }
-}
 
-// Repeat this until Round = 0
-// Need to track the zombies killed
-//
-// if (Round < Limit) {
-//     Spawn(Round);
-// } else {
-//     Round -= Limit;
-//     Spawn(Limit);
-// }
+    public void EnemyKilled() {
+        enemyCurrentCount -= 1;
+    }
+}

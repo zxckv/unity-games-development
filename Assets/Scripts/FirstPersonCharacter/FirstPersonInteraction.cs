@@ -20,6 +20,8 @@ public class FirstPersonInteraction : MonoBehaviour {
 
     [SerializeField] public Transform hand;
 
+    [SerializeField] public List<PerkType> perks;
+
     void Start() {
         FirstPersonInteraction interactor = new FirstPersonInteraction();
         interactor = this;
@@ -57,8 +59,6 @@ public class FirstPersonInteraction : MonoBehaviour {
     }
 
     public void setWeapon(GameObject obj) {
-        // Destroy(hand.GetChild(0).gameObject);
-        // obj.transform.SetParent(hand.transform);
-        // hand.GetChild(0).gameObject = obj;
+        FirstPersonMain.instance.GetComponent<FirstPersonMain>().SwapWeapon(obj);
     }
 }

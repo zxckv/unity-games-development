@@ -12,6 +12,7 @@ public class Door : MonoBehaviour, IInteractable {
 
         if (price <= interactor.getPoints()) {
             interactor.setPoints(interactor.getPoints() - price);
+            AudioManager.Instance.Play(AudioManager.SoundType.Purchase);
             Destroy(gameObject);
         }
     }

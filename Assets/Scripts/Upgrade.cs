@@ -7,21 +7,17 @@ public class Upgrade : MonoBehaviour, IInteractable {
     
     [SerializeField] private string objName;
     [SerializeField] private int price; 
-    [SerializeField] private Color colour;
     
-    private bool aquired = false;
-
     public void Interact(FirstPersonInteraction interactor) {
         if (price <= interactor.getPoints()) {
             interactor.setPoints(interactor.getPoints() - price);
-            // Upgrade weapon
-            aquired = true;
+            FirstPersonMain.instance.GetComponent<FirstPersonMain>().UpgradeWeapon();
+            AudioManager.Instance.Play(AudioManager.SoundType.Purchase);
+            AudioManager.Instance.Play(AudioManager.SoundType.Oven);
         }
     }
 
     public void View(FirstPersonInteraction interactor) {
-        if (aquired == false) {
-            interactor.messageBox.SetText($"[E] Buy {objName} for {price}");
-        }
+        interactor.messageBox.SetText($"[E] Buy {objName} for {price}");
     }
 }

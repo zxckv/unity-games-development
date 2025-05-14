@@ -5,19 +5,27 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
+public enum WeaponType {
+    Pistol,
+    Rifle,
+    Shotgun,
+    Submachinegun
+}
+
 public class Weapon : MonoBehaviour {
 
     [SerializeField] public GameObject obj;
+    public WeaponType type;
 
-    public UnityEvent onWeaponFire;
-    public float weaponFireRate;
-    public bool weaponIsAuto;
-    public float weaponDamage;
-    public float weaponRange;
-    public int weaponMag;
-    public int weaponReserve;
-    public float weaponReloadTime;
-    public int weaponLevel = 1;
+    [SerializeField] public UnityEvent onWeaponFire;
+    [SerializeField] public float weaponFireRate;
+    [SerializeField] public bool weaponIsAuto;
+    [SerializeField] public float weaponDamage;
+    [SerializeField] public float weaponRange;
+    [SerializeField] public int weaponMag;
+    [SerializeField] public int weaponReserve;
+    [SerializeField] public float weaponReloadTime;
+    [SerializeField] public int weaponLevel = 1;
 
     private int weaponMagAmmo;
     private int weaponReserveAmmo;
@@ -27,9 +35,7 @@ public class Weapon : MonoBehaviour {
     private float reloadCooldown;
     private Transform playerCamera;
 
-    public TMP_Text ammoMagTextBox;
-    public TMP_Text ammoResTextBox;
-    public TMP_Text weaponTierTextBox;
+    public AudioManager.SoundType weaponSound;
 
     void Start() {
         weaponCooldown = 1 / weaponFireRate;
@@ -37,9 +43,9 @@ public class Weapon : MonoBehaviour {
         weaponReserveAmmo = weaponReserve;
         playerCamera = Camera.main.transform;
 
-        ammoMagTextBox.SetText(weaponMagAmmo.ToString());
-        ammoResTextBox.SetText("| " + weaponReserveAmmo.ToString());
-        weaponTierTextBox.SetText("TIER " + weaponLevel.ToString());
+        FirstPersonMain.instance.GetComponent<FirstPersonMain>().ammoMag = weaponMagAmmo;
+        FirstPersonMain.instance.GetComponent<FirstPersonMain>().ammoRes = weaponReserveAmmo;
+        FirstPersonMain.instance.GetComponent<FirstPersonMain>().weaponTier = weaponLevel;
     }
 
     void Update() {
@@ -65,21 +71,24 @@ public class Weapon : MonoBehaviour {
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.R)) {
+        if(Input.GetKeyDown(KeyCode.R) && ((weaponMagAmmo + weaponReserveAmmo) != 0)) {
             if ((weaponMagAmmo != weaponMag) && !isReloading) {
                 weaponReload();
             }
         }
 
-        ammoMagTextBox.SetText(weaponMagAmmo.ToString());
-        ammoResTextBox.SetText("| " + weaponReserveAmmo.ToString());
+        FirstPersonMain.instance.GetComponent<FirstPersonMain>().ammoMag = weaponMagAmmo;
+        FirstPersonMain.instance.GetComponent<FirstPersonMain>().ammoRes = weaponReserveAmmo;
+        FirstPersonMain.instance.GetComponent<FirstPersonMain>().weaponTier = weaponLevel;
 
         weaponCooldown -= Time.deltaTime;
         if (isReloading) { reloadCooldown -= Time.deltaTime;  }
-        if (reloadCooldown <= 0) { isReloading = false; obj.GetComponent<MeshRenderer>().enabled = true; }
+        if (reloadCooldown <= 0) { isReloading = false;  obj.GetComponent<MeshRenderer>().enabled = true; }
     }
 
     void weaponShoot() {
+        AudioManager.Instance.Play(weaponSound);
+
         Ray weaponRaycast = new Ray(playerCamera.position, playerCamera.forward);
         if (Physics.Raycast(weaponRaycast, out RaycastHit weaponHitInfo, weaponRange)) {
             if (weaponHitInfo.collider.transform.root.TryGetComponent(out Enemy enemy)) {
@@ -91,6 +100,7 @@ public class Weapon : MonoBehaviour {
     }
 
     void weaponReload() {
+        AudioManager.Instance.Play(AudioManager.SoundType.Reload);
         obj.GetComponent<MeshRenderer>().enabled = false;
 
         isReloading = true;
@@ -108,5 +118,15 @@ public class Weapon : MonoBehaviour {
 
     float calcDamage() {
         return weaponDamage + ((weaponDamage * weaponLevel) / 2);
+    }
+
+    public void Refill() {
+        Debug.Log("REFILL");
+        weaponMagAmmo = weaponMag;
+        weaponReserveAmmo = weaponReserve;
+    }
+
+    public void Upgrade() {
+        weaponLevel += 1;
     }
 }

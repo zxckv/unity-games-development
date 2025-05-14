@@ -12,6 +12,7 @@ public class Wallbuy : MonoBehaviour, IInteractable {
     public void Interact(FirstPersonInteraction interactor) {
         if (price <= interactor.getPoints()) {
             interactor.setPoints(interactor.getPoints() - price);
+            AudioManager.Instance.Play(AudioManager.SoundType.Purchase);
             interactor.setWeapon(obj);            
         }
     }

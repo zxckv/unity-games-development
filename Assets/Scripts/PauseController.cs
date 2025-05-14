@@ -7,12 +7,6 @@ public class PauseController : MonoBehaviour {
 
     public GameObject panel;
 
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.P)) {
-            Pause();
-        }
-    }
-
     public void Pause() {
         panel.SetActive(true);
         Time.timeScale = 0;
@@ -20,12 +14,14 @@ public class PauseController : MonoBehaviour {
     }
 
     public void Continue() {
+        AudioManager.Instance.Play(AudioManager.SoundType.Click);
         panel.SetActive(false);
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Exit() {
+        AudioManager.Instance.Play(AudioManager.SoundType.Click);
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
