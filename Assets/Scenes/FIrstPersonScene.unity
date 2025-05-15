@@ -1991,7 +1991,7 @@ MonoBehaviour:
   - {fileID: 1186970917}
   - {fileID: 1754156858}
   enemy: {fileID: 6024024802158883540, guid: 778d3ebc33d3cc74e87997cd68a025e2, type: 3}
-  round: 1
+  round: 0
   enemyCurrentCount: 0
   enemyDelay: 1
   roundTransitionTime: 3
